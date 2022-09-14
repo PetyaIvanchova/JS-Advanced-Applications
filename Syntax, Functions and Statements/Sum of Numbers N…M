@@ -1,0 +1,10 @@
+function sum(first, second){
+   
+    let num1=Number(first);
+    let num2=Number(second);
+    let result=0;
+    for (let index = num1; index <= num2; index++) {
+    result+=index;
+    }
+    console.log(result);
+}
