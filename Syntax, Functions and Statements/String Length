@@ -1,0 +1,8 @@
+function sum(text, text1, text2){
+   // let textlength=text.length;
+   // let text1length=text1.length;
+   // let text2length=text2.length;
+    let trisum=text.length+text1.length+text2.length;
+    console.log(trisum);
+    console.log(Math.floor(trisum/3));
+}
