@@ -1,0 +1,27 @@
+function solve(numbers){
+    console.log(sum(numbers));
+    console.log(aggegate(numbers));
+    console.log(con(numbers));
+function sum(numbers){
+    let result=numbers[0];
+      for(let i=1; i<numbers.length; i++){
+        result+=numbers[i];
+      }
+      return result;
+   }
+function aggegate(numbers){
+      let result=0;
+      for(let i=0; i<numbers.length; i++){
+        result+=(1/numbers[i]);
+      }
+      return result;
+   }
+function con(numbers){
+    let result=numbers[0];
+    for(let i=1; i<numbers.length; i++){
+      result+=numbers[i].toString();
+    }
+    return result;
+ }
+
+}
