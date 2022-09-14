@@ -1,0 +1,16 @@
+function largestx(x, y, z){
+    let thenumber;
+    if(x>y && x>z)
+    {
+        thenumber=x;
+    }
+    else if(y>x && y>z)
+    {
+        thenumber=y;
+    }
+    else if(z>y && z>x)
+    {
+        thenumber=z;
+    }
+    console.log(`The largest number is ${thenumber}.`);
+}
