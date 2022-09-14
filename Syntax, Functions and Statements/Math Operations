@@ -1,0 +1,20 @@
+function math(first, second, symbol){
+    if(symbol=='+'){
+        console.log(first+second);
+    }
+    else if(symbol=='-'){
+        console.log(first-second);
+    }
+    else if(symbol=='*'){
+        console.log(first*second);
+    }
+    else if(symbol=='/'){
+        console.log(first/second);
+    }
+    else if(symbol=='%'){
+        console.log(first%second);
+    }
+    else if(symbol=="**"){
+        console.log(first**second);
+    }
+}
