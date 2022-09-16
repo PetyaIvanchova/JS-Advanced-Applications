@@ -1,0 +1,16 @@
+function check(numbers){
+    let chnum=numbers.toString();
+    let currumber=chnum[0];
+    let sum=0;
+    let isSame=true;
+    for (let i = 0; i< chnum.length; i++) {
+        if(currumber!==chnum[i]){
+           
+         isSame=false;
+        }
+        
+        sum+=Number(chnum[i]);
+    }
+    console.log(isSame);
+    console.log(sum);
+}
