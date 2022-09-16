@@ -1,0 +1,5 @@
+function cal(fruit, number, secondnumber){
+    let num=number*0.001;
+    let sum=num*secondnumber;
+    console.log(`I need $${sum.toFixed(2)} to buy ${num.toFixed(2)} kilograms ${fruit}.`);
+}
