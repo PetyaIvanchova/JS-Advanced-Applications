@@ -1,0 +1,19 @@
+function timeToWalk(steps, footprint, speed){
+    let distance=steps*footprint;
+    let speedmeters=speed/3.6;
+    let time=distance/speedmeters;
+    let rest=Math.floor(distance/500);
+
+    let timeInMIn=Math.floor(time/60);
+    let timeInSec=Math.round(time-(timeInMIn*60));
+    let timeInH=Math.floor(time/3600);
+    timeInMIn+=rest;
+    timeInH+=Math.floor(timeInMIn/60);
+    timeInMIn=timeInMIn%60;
+
+    let fh=timeInH < 10 ? `0${timeInH}` : `${timeInH}`;
+    let fm=timeInMIn < 10 ? `0${timeInMIn}` : `${timeInMIn}`;
+    let fs=timeInSec < 10 ? `0${timeInSec}` : `${timeInSec}`;
+    
+    console.log(`${fh}:${fm}:${fs}`);
+}
