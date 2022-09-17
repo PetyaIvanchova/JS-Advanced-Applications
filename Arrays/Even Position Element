@@ -1,0 +1,9 @@
+function solve(array){
+    let text='';
+    for (let i = 0; i < array.length; i=i+2) {
+        
+        text += (array[i]+' ').toString();
+        
+    }
+    console.log(text);
+}
