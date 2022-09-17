@@ -1,0 +1,8 @@
+function solve(arr){
+    arr.sort();
+    arr.sort(((a,b) => a.length - b.length));
+
+    for (let num of arr) {
+        console.log(num);
+    }
+}
