@@ -1,0 +1,6 @@
+function solve(arr, start, end){
+    let startindex=arr.indexOf(start);
+    let endindex=arr.indexOf(end);
+    let result=arr.slice(startindex,endindex+1);
+    return result;
+}
