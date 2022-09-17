@@ -1,0 +1,18 @@
+function solve(input){
+
+    let firstindex=0;
+    let secondindex=input[0].length-1;
+
+    let firstsum=0;
+    let secondsum=0;
+
+    for (let i = 0; i < input.length; i++) {
+       
+        firstsum+=input[i][firstindex];
+        secondsum+=input[i][secondindex];
+
+        firstindex++;
+        secondindex--;      
+    }
+    console.log(firstsum + ' ' + secondsum);
+}
