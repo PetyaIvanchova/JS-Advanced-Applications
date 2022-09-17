@@ -1,0 +1,18 @@
+function solve(matrix){
+    for (let i = 0; i < matrix.length-1; i++) {
+        let sumrowone=matrix[i].reduce((acc, el) => acc+el);
+        let sumrowtwo=matrix[i+1].reduce((acc, el) => acc+el);
+        let sumcolone=0;
+        let sumcoltwo=0;
+        for (let col = 0; col < matrix.length; col++) {
+            sumcolone+=matrix[i][col];
+            sumcoltwo+=matrix[i+1][col];
+            
+        }
+        if(sumrowone!==sumrowtwo || sumcolone!==sumcoltwo){
+            return false;
+        }
+    }
+    return true;
+}
+
