@@ -1,0 +1,13 @@
+function solve(arr){
+    arr.sort((a, b)=>a-b);
+    let result=[];
+    while(arr.length>0){
+        let n=arr.shift();
+        result.push(n);
+        if(arr.length>0){
+            let b=arr.pop();
+            result.push(b);
+        }
+    }
+    console.log(result);
+}
