@@ -1,0 +1,8 @@
+function solve(arr){
+   
+   let arrsort=arr.sort((a, b) => a-b);
+  
+   console.log(arrsort.slice(arrsort.length/2));
+   
+   
+}
