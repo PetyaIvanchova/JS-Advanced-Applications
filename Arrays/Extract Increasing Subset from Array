@@ -1,0 +1,14 @@
+function solve(arr){
+    let big=Number.NEGATIVE_INFINITY;
+    let result=[];
+   arr.forEach(element => {
+     if(element>=big){
+        big=element;
+        result.push(big);
+       
+     }
+     
+   });
+   return result;
+}
+
