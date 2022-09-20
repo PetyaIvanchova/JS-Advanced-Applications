@@ -1,0 +1,10 @@
+function solve(string, number, number2){
+    return{
+        name: string,
+        population: number,
+        treasury: number2
+    };
+    
+ 
+}
+
