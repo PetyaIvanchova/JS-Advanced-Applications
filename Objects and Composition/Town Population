@@ -1,0 +1,30 @@
+function solve(arr){
+    let towndata=arr.map(element=>{
+        let data=element.split(' <-> ');
+
+        return {
+            name: data[0],
+            population: Number(data[1])
+        };
+    });
+
+    let result={};
+    for (const town of towndata) {
+        if(result[town.name]===undefined){
+           result[town.name]=town.population;
+        }
+        else{
+            result[town.name]+=town.population;
+        }
+    }
+    for (const re in result) {
+        console.log(re+' : '+result[re]);
+    }
+
+    
+       
+    
+    
+
+}
+
