@@ -1,1 +1,23 @@
-
+function solve(arr){
+    let result =[];
+    //let town=arr[0].split('|')[1];
+   // let lat=arr[0].split('|')[2];
+   // let long=arr[0].split('|')[3];
+    for (let index = 1; index < arr.length; index++) {
+       
+        let one=arr[index].split('| ')[1];
+        let name = one.trim();
+       
+        let two=Number(arr[index].split('|')[2]).toFixed(2);
+        let th=Number(arr[index].split('|')[3]).toFixed(2);
+        let obj={
+            "Town": name,
+            "Latitude": Number(two),
+            "Longitude": Number(th) 
+        };
+        result.push(obj);
+        
+    }
+    let jr=JSON.stringify(result);
+    console.log(jr);
+}
