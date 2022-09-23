@@ -1,0 +1,9 @@
+function solve(){
+    let listitems=document.querySelectorAll('ul li');
+
+    let textarea=document.getElementById('result');
+
+    for (const item of listitems) {
+        textarea.value+=item.textContent;
+    }
+}
