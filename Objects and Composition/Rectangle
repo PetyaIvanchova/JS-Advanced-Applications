@@ -1,0 +1,19 @@
+function solve(width, height, color){
+    //let calcArea=width*height;
+    color=color.charAt(0).toUpperCase() + color.slice(1);
+    let re={};
+    re.width=width;
+    re.height=height;
+    re.color=color;
+    re.calcArea=function calsArea(){
+        return width*height;
+    }
+    console.log(re.calcArea());
+    let rec={
+        width :width,
+        height: height,
+        color: color,
+       
+    }
+    console.log(rec);
+}
