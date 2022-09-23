@@ -1,0 +1,12 @@
+function result(worker){
+   
+    let worker2 = {weight: worker.weight, experience: worker.experience, levelOfHydrated: worker.levelOfHydrated, dizziness: worker.dizziness}
+    if(worker2.dizziness==true){
+        worker2.dizziness=false;
+        let foradd=(0.1*worker2.weight)*worker2.experience;
+        worker2.levelOfHydrated+=foradd;
+    }
+    return(worker2);
+
+    
+}
