@@ -1,0 +1,13 @@
+function solve(arr){
+    let arr2=[];
+    arr.forEach(element => {
+       // console.log(element.split('/')[2])
+        let [name, level, items]=element.split(' / ');
+        level=Number(level);
+        items=items ? items.split(', ') : [];
+        //obj.items.push(element.split(', ')[2]);
+                arr2.push({name, level, items});
+    });
+    let json=JSON.stringify(arr2);
+    console.log(json);
+}
