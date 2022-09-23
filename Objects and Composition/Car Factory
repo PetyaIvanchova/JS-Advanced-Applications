@@ -1,0 +1,54 @@
+function solve(obj){
+    let obj2={};
+    obj2.model=obj.model;
+    
+    if(obj.power<=90){
+        let Smallengine= { power: 90, volume: 1800 };
+      
+        obj2.engine= Smallengine;
+    }
+    else if(obj.power<=120){
+        let Normalengine= { power: 120, volume: 2400 };
+   
+        obj2.engine= Normalengine;
+    }
+    else if(obj.power<=200){
+        let Monsterengine= { power: 200, volume: 3500 };
+      
+        obj2.engine= Monsterengine;
+    }
+    //Hatchback: { type: 'hatchback', color: <as required> }
+
+    //Coupe: { type: 'coupe', color: <as required> }
+    if(obj.carriage==="hatchback"){
+        obj2.carriage = {
+             type: "hatchback",
+              color: obj.color 
+            }
+        
+
+    }
+    else{
+        obj2.carriage = {
+             type: "coupe",
+              color: obj.color
+             };
+        
+
+    }
+   
+    if(obj.wheelsize%2===0){
+        let n=obj.wheelsize-1;
+       
+        obj2.wheels=[n, n, n, n];
+    }
+    else{
+        let n=obj.wheelsize;
+       
+        obj2.wheels=[n, n, n, n];
+    }
+
+
+    
+    console.log(obj2);
+}
