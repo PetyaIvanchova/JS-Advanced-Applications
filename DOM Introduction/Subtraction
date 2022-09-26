@@ -1,0 +1,8 @@
+function solve(){
+    let firstnum=Number(document.getElementById('firstNumber').value);
+    let secondnum=Number(document.getElementById('secondNumber').value);
+
+    let result=firstnum-secondnum;
+    document.getElementById('result').innerText=result;
+
+}
