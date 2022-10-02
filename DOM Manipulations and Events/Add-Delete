@@ -1,0 +1,18 @@
+function addItem() {
+    let items=document.getElementById('items');
+    let newitem=document.getElementById('newItemText').value;
+
+    let liitem=document.createElement('li');
+    liitem.textContent=newitem+" ";
+
+    let deletebutton=document.createElement('a');
+    deletebutton.textContent='Delete';
+    deletebutton.style.color='red';
+
+    deletebutton.addEventListener('click', function(event){
+        event.target.parentElement.remove();
+    })
+    liitem.append(deletebutton);
+    items.append(liitem);
+
+}
