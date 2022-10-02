@@ -1,0 +1,15 @@
+function validate() {
+    let email=document.getElementById('email');
+
+    email.addEventListener('change', function (event){
+        let pattern= /^([\w\-.]+)@([a-z]+)(\.[a-z]+)+$/;
+        let forcheck=event.target.value;
+        //console.log(forcheck);
+        if(!((pattern).test(forcheck))){
+            event.target.className = 'error';
+        }
+        else{
+            event.target.className='input';
+        }
+    });
+}
