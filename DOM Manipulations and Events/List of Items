@@ -1,0 +1,10 @@
+function addItem() {
+    
+    let list=document.getElementById('items');
+    let newitem=document.getElementById('newItemText').value;
+    let liitem=document.createElement('li');
+    liitem.textContent=newitem;
+    newitem.value='';
+    list.appendChild(liitem);
+    
+}
