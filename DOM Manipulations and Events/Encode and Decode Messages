@@ -1,0 +1,32 @@
+function encodeAndDecodeMessages() {
+    let buttons=Array.from(document.querySelectorAll("button"));
+    buttons[0].addEventListener("click", encode);
+    buttons[1].addEventListener("click", decode);
+
+    function encode(event){
+        let mg="";
+        let curretntex=event.target.parentElement.children[1].value;
+        for(let i=0; i<curretntex.length; i++){
+            let currench=curretntex[i].charCodeAt();
+            mg+=String.fromCharCode(currench+1);
+        }
+        let textareas=document.querySelectorAll("textarea");
+        let resulttextarea=textareas[1];
+        resulttextarea.value=mg;
+        let currenttextarea=textareas[0];
+        currenttextarea.value="";
+    }
+
+    function decode(event){
+        let curretnarea=event.target.parentElement.children[1];
+        let currenttext=curretnarea.value;
+        let remg="";
+
+        for(let i=0; i<currenttext.length; i++){
+            let ch=currenttext[i].charCodeAt();
+            remg+=String.fromCharCode(ch-1);
+        }
+
+        curretnarea.value=remg;
+    }
+}
