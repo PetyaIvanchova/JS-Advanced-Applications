@@ -1,0 +1,25 @@
+function lockedProfile() {
+    let buttons=Array.from(document.getElementsByTagName("button"));
+
+    for(let button of buttons){
+       button.addEventListener("click", showmore); 
+    }
+
+    function showmore(event){
+        let button=event.target;
+        let profile=button.parentNode;
+        let moreinfo=profile.getElementsByTagName('div')[0];
+        let lockstatus=profile.querySelector("input[type='radio']:checked").value;
+
+        if(lockstatus==="unlock"){
+            if(button.textContent==='Show more'){
+                moreinfo.style.display='inlinr-block';
+                button.textContent='Hide it';
+            }
+            else if(button.textContent==='Hide it'){
+                moreinfo.style.display='none';
+                button.textContent='Show more';
+            }
+        }
+    }
+}
