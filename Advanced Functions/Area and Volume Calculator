@@ -1,0 +1,30 @@
+function area() {
+
+    return Math.abs(this.x * this.y);
+    
+};
+
+function vol() {
+
+        return Math.abs(this.x * this.y * this.z);
+        
+};
+
+function solve(area, vol, data) {
+
+   data=JSON.parse(data);
+   let result=[];
+
+   for(let entry of data){
+    let calculateArea=area.call(entry);
+    let calculateVolum=vol.call(entry);
+     
+    result.push({
+        area: calculateArea,
+        volume: calculateVolum
+       })
+    
+   }
+   
+    return result;
+}
