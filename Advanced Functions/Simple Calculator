@@ -1,0 +1,28 @@
+function solve(){
+    let sel1;
+    let sel2;
+    let res;
+
+    let action={
+        init:(first,second,result)=>{
+            sel1=document.querySelector(first);
+            sel2=document.querySelector(second);
+            res=document.querySelector(result);
+        },
+        add:()=>{
+            let num1=Number(sel1.value);
+            let num2=Number(sel2.value);
+            let sum=num1+num2;
+            res.value=sum;
+        },
+        subtract:()=>{
+            let num1=Number(sel1.value);
+            let num2=Number(sel2.value);
+            let sub=num1-num2;
+            res.value=sub;
+        }
+
+
+    }
+    return action;
+}
