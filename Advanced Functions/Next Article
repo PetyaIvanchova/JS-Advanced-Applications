@@ -1,0 +1,13 @@
+function solve(article){
+    let myarticles=Array.from(article);
+    let content=document.getElementById('content');
+
+    return()=>{
+        if(!myarticles.length){
+            return ;
+        }
+
+        let curr=myarticles.shift();
+        content.innerHTML+=`<article>${curr}</article>`
+    }
+}
