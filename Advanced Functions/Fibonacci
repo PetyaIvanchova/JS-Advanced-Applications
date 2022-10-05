@@ -1,0 +1,10 @@
+function solve(){
+    let firstnum=0;
+    let secondnum=1;
+    return function(){
+        let sum=firstnum+secondnum;
+        firstnum=secondnum;
+        secondnum=sum;
+        return firstnum;
+    }
+}
