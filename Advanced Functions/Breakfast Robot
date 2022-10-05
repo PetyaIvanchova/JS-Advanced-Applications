@@ -1,0 +1,57 @@
+function solve(){
+    let store={
+        protein: 0,
+        carbohydrate: 0,
+        fat: 0,
+        flavour: 0
+    }
+
+    let recipesEnum={
+        apple: {carbohydrate:1, flavour:2},
+        burger: {carbohydrate:5, fat: 7, flavour: 3},
+        lemonade: {carbohydrate: 10, flavour: 20},
+        eggs: {protein: 5, fat: 1, flavour:1},
+        turkey: {protein: 10, carbohydrate: 20, fat: 10, flavour:10}
+    }
+
+    return function inputhandler(input){
+        let actionhandler=cmdOption();
+        let[cmd, microelemt,quantity]=input.split(" ");
+        return actionhandler[cmd](microelemt,quantity);
+    }
+
+    function cmdOption(){
+        return{
+            restock:(microelemt,quantity)=>{
+                store[microelemt]=store[microelemt]+Number(quantity);
+                return "Success"
+            },
+            prepare:(recipe,quantity)=>{
+                let IsDone=true;
+                let str="";
+                let copystore=JSON.parse(JSON.stringify(store));
+
+                for(let[key, defQuantity] of Object.entries(recipesEnum[recipe])){
+                    let neededvalue=Number(quantity)*defQuantity;
+                    if(store[key]<neededvalue){
+                        IsDone=false;
+                        str=`Error: not enough ${key} in stock`;
+                        break;
+                    }
+                    copystore[key]-=neededvalue;
+                }
+
+                if(!IsDone){
+                    return str;
+                }
+                store=copystore;
+                return "Success";
+
+            },
+            report:()=>{
+                return `protein=${store.protein} carbohydrate=${store.carbohydrate} fat=${store.fat} flavour=${store.flavour}`
+
+            }
+        }
+    }
+}
