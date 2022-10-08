@@ -1,0 +1,32 @@
+function solve(obj){
+    let validmethod=['GET', 'POST', 'DELETE', 'CONNECT'];
+    let uripattern=/^[\w.]+$/g;
+    let supportedversion=['HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2.0'];
+    let specilalcher=[`<`, `>`, `\\`, `&`, `'`, `"`];
+    
+   
+    if(!validmethod.includes(obj.method)){
+        throw new Error("Invalid request header: Invalid Method");
+
+    }
+    if(!obj.hasOwnProperty("uri")){
+        throw new Error("Invalid request header: Invalid URI");
+    }
+    if(obj.url !=="*" && !obj.uri.match(uripattern)){
+        throw new Error("Invalid request header: Invalid URI");
+    }
+    if(!supportedversion.includes(obj.version)){
+        throw new Error("Invalid request header: Invalid Version");
+    }
+    if(!obj.hasOwnProperty("message")){
+        throw new Error("Invalid request header: Invalid Message");
+    }
+    for(let ch of obj.message){
+        if(specilalcher.includes(ch)){
+            throw new Error("Invalid request header: Invalid Message");
+        }
+    }
+    return obj;
+}
+
+
