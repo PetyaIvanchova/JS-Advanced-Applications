@@ -1,0 +1,21 @@
+let {assert}=require('chai');
+let {assert, isOddOrEven}=require('../Even or Odd');
+
+describe('Testing', ()=>{
+
+    it('should be a string', ()=>{
+        assert.equal(isOddOrEven([]), undefined);
+    })
+    it('should be a string', ()=>{
+        assert.equal(isOddOrEven({}), undefined);
+    })
+    it('should be a string', ()=>{
+        assert.equal(isOddOrEven(5), undefined);
+    })
+    it('should be a even', ()=>{
+        assert.equal(isOddOrEven("aass"), "even");
+    })
+    it('should be a odd', ()=>{
+        assert.equal(isOddOrEven("sad"), "odd");
+    })
+})
