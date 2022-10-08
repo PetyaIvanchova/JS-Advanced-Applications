@@ -1,0 +1,13 @@
+const {sum}=require('../Sum of Numbers');
+const {expect, assert}=require('chai');
+
+describe('sum', ()=>{
+
+    it('should take an array with numbers', ()=>{
+       let array=[1, 2, 3];
+       let result=sum(array);
+       expect(result).to.be.equal(6);
+    });
+
+    
+})
