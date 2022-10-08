@@ -1,0 +1,29 @@
+let {assert}=require('chai');
+let {assert, lookupChar}=require("../Char Lookup");
+
+describe("Testing", ()=>{
+    it("should be string and number", ()=>{
+        assert.equal(lookupChar('Name','Name'),undefined);
+    })
+    it("should be string and number", ()=>{
+        assert.equal(lookupChar(5,4),undefined);
+    })
+    it("should be string and number", ()=>{
+        assert.equal(lookupChar(5,'Name'),undefined);
+    })
+    it("should be string and number", ()=>{
+        assert.equal(lookupChar('Pesho',0.99),undefined);
+    })
+    it("should be string and number with corr value", ()=>{
+        assert.equal(lookupChar("Name",6),"Incorrect index");
+    })
+    it("should be string and number with corr value", ()=>{
+        assert.equal(lookupChar("Name",4),"Incorrect index");
+    })
+    it("should be string and number with corr value", ()=>{
+        assert.equal(lookupChar("Name",-1),"Incorrect index");
+    })
+    it("correct", ()=>{
+        assert.equal(lookupChar("Name",3),"e");
+    })
+})
