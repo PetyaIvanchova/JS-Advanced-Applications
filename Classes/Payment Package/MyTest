@@ -1,0 +1,96 @@
+let {assert}=require('chai');
+let PaymentPackage=require('../Payment Package');
+
+describe('Testing', ()=>{
+    describe("Constructer", ()=>{
+        let paymentpackage;
+        beforeEach(()=>{
+        paymentpackage=new PaymentPackage("Petya", 17);
+        })
+        it("name should be a string", ()=>{
+        assert.equal(paymentpackage._name, "Petya", "name is correct")
+        })
+        it("value should be a string", ()=>{
+            assert.equal(paymentpackage._value, 17, "value is correct")
+        })
+        it("VAT should be a string", ()=>{
+            assert.equal(paymentpackage._VAT, 20, "VAT is correct")
+        })
+        it("active should be a string", ()=>{
+            assert.equal(paymentpackage._active, true, "active is correct")
+        })
+    })
+
+    describe("testing setters", ()=>{
+        
+        it("name should be a string",()=>{
+            assert.throws(()=>{new PaymentPackage(10,10)},'Name must be a non-empty string');
+        })
+        it("name should be a string",()=>{
+            assert.throws(()=>{new PaymentPackage("",10)},'Name must be a non-empty string');
+        })
+        it("name should change",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 17);
+            assert.equal(paymentpackage.name,'Petya')
+            paymentpackage.name='Teodora';
+            assert.equal(paymentpackage.name, 'Teodora');
+        })
+
+        it("value should be a number",()=>{
+            assert.throws(()=>{new PaymentPackage("Petya","num")},'Value must be a non-negative number');
+        })
+        it("value should be a number",()=>{
+            assert.throws(()=>{new PaymentPackage("Petya",-10)},'Value must be a non-negative number');
+        })
+        it("value should change",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 17);
+            assert.equal(paymentpackage.value,17)
+            paymentpackage.value=18;
+            assert.equal(paymentpackage.value, 18);
+            paymentpackage.value=0;
+            assert.equal(paymentpackage.value, 0)
+        })
+
+        it("VAT should be a number",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 10);
+            assert.throws(()=>{paymentpackage.VAT="vat"},'VAT must be a non-negative number');
+        })
+        it("VAT should be a number",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 10);
+            assert.throws(()=>{paymentpackage.VAT=-10},'VAT must be a non-negative number');
+        })
+        it("VAT should change",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 10);
+            paymentpackage.VAT=17;
+            assert.equal(paymentpackage.VAT,17)
+            paymentpackage.VAT=18;
+            assert.equal(paymentpackage.VAT, 18);
+        })
+
+        it("active should be a number",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 10);
+            assert.throws(()=>{paymentpackage.active="vat"},'Active status must be a boolean');
+        })
+        it("active should be a number",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 10);
+            assert.throws(()=>{paymentpackage.active=10},'Active status must be a boolean');
+        })
+        it("active should change",()=>{
+            let paymentpackage=new PaymentPackage("Petya", 10);
+            paymentpackage.active=true;
+            assert.equal(paymentpackage.active,true)
+            paymentpackage.active=false;
+            assert.equal(paymentpackage.active, false);
+        })
+        it("tostring check",()=>{
+           let paymentpackage=new PaymentPackage("Petya", 10);
+           let result = [`Package: Petya`,
+                          `- Value (excl. VAT): 10`,
+                          `- Value (VAT 20%): ${10*(1+20/100)}`
+                        ]
+           
+           
+           assert.equal(paymentpackage.toString(),result.join('\n'));
+        })
+    })
+})
