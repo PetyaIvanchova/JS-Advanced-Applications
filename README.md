@@ -11,5 +11,5 @@ Here you can find problem solutions for the following exercises:
 6.[Objects and Composition](https://github.com/PetyaIvanchova/JS-Advanced-Applications/tree/main/Objects%20and%20Composition)\
 7.[Prototypes and Inheritance](https://github.com/PetyaIvanchova/JS-Advanced-Applications/tree/main/Prototypes%20and%20Inheritance)\
 8.[Syntax, Functions and Statements](https://github.com/PetyaIvanchova/JS-Advanced-Applications/tree/main/Syntax%2C%20Functions%20and%20Statements)\
-9.[Unit Testing and Error Handling](https://github.com/PetyaIvanchova/JS-Advanced-Applications/tree/main/Unit%20Testing%20and%20Error%20Handling)\
+9.[Unit Testing and Error Handling](https://github.com/PetyaIvanchova/JS-Advanced-Applications/tree/main/Unit%20Testing%20and%20Error%20Handling)
 
