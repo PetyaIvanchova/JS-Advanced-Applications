@@ -1,0 +1,76 @@
+let {assert}=require("chai");
+let { chooseYourCar}=require("../chooseYourCar");
+
+describe("Testing", function() {
+    describe("Testing chooing type", function() {
+        it("should be specific years", function() {
+            assert.throws(()=>chooseYourCar.choosingType("Sedan","red", 1899),"Invalid Year!");
+        });
+        it("should be specific years", function() {
+            assert.throws(()=>chooseYourCar.choosingType("Sedan","red", 2023),"Invalid Year!");
+        });
+        it("should be Sedan", function() {
+            assert.throws(()=>chooseYourCar.choosingType("s","red", 2000),"This type of car is not what you are looking for.");
+        });
+        it("should be picked", function() {
+            assert.equal(chooseYourCar.choosingType("Sedan","red", 2010),`This red Sedan meets the requirements, that you have.`);
+        });
+        it("should be picked", function() {
+            assert.equal(chooseYourCar.choosingType("Sedan","red", 2011),`This red Sedan meets the requirements, that you have.`);
+        });
+        it("should be picked", function() {
+            assert.equal(chooseYourCar.choosingType("Sedan","red", 2009),`This Sedan is too old for you, especially with that red color.`);
+        });
+        
+     });
+
+     describe("Testing brandName",()=>{
+        it("should have valid inputs",()=>{
+            assert.throws(()=>chooseYourCar.brandName([],5),"Invalid Information!");
+        })
+        it("should have valid inputs",()=>{
+            assert.throws(()=>chooseYourCar.brandName([],-1),"Invalid Information!");
+        })
+        it("should have valid inputs",()=>{
+            assert.throws(()=>chooseYourCar.brandName(["BMW"],10),"Invalid Information!");
+        })
+        it("should remove",()=>{
+            //let car=chooseYourCar.brandName(["BMW", "Audi"],1);
+            
+            assert.equal(chooseYourCar.brandName(["BMW", "Audi"],1),"BMW");
+        })
+        it("should remove",()=>{
+            //let car=chooseYourCar.brandName(["BMW", "Audi"],1);
+            
+            assert.equal(chooseYourCar.brandName(["BMW", "Audi","Reno"],1),"BMW, Reno");
+        })
+    })
+
+    describe("Testing carfuel",()=>{
+        it("should have valid inputs",()=>{
+           assert.throws(()=>chooseYourCar.carFuelConsumption("ds","ds"),"Invalid Information!");
+        })
+        it("should have valid inputs",()=>{
+            assert.throws(()=>chooseYourCar.carFuelConsumption(5,"ds"),"Invalid Information!");
+        })
+        it("should have valid inputs",()=>{
+            assert.throws(()=>chooseYourCar.carFuelConsumption("ds",7),"Invalid Information!");
+        })
+        it("should have valid inputs",()=>{
+            assert.throws(()=>chooseYourCar.carFuelConsumption(9,-1),"Invalid Information!");
+        })
+        it("should have valid inputs",()=>{
+            assert.throws(()=>chooseYourCar.carFuelConsumption(-1,0),"Invalid Information!");
+        })
+        it("should cal right", ()=>{
+            assert.equal(chooseYourCar.carFuelConsumption(70,5),`The car burns too much fuel - 7.14 liters!`);
+        })
+        it("should cal right", ()=>{
+            assert.equal(chooseYourCar.carFuelConsumption(70,4.9),`The car is efficient enough, it burns 7.00 liters/100 km.`);
+        })
+        it("should cal right", ()=>{
+            assert.equal(chooseYourCar.carFuelConsumption(7000,1),`The car is efficient enough, it burns 0.01 liters/100 km.`);
+        })
+    })
+
+});
